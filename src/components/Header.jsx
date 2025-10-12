@@ -11,11 +11,11 @@ function Header(){
     <h1>Book Management</h1>
     <nav>
        {navigation.map(nav=>(
-        <a
-        key={nav.name}
+        <NavLink
+       key={nav.name}
         to={nav.path}>
 {nav.name}
-        </a>
+        </NavLink>
        ))}
          </nav>
 </header>

@@ -1,7 +1,13 @@
-import React from "react";
+import BookForm from "../form/BookForm.jsx"
 const AddBook = () =>{
+    const handleOnSubmit=(book)=>{
+        console.log(book);
+    }
     return(
-        <div>AddBook</div>
-        
+        <div className="addForm">
+            <BookForm handleSubmit={handleOnSubmit}/>
+        </div>
+
     )
 }
+export default AddBook
