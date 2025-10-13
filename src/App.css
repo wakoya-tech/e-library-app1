@@ -1,27 +1,29 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+
+body {
   font-family: Arial, Helvetica, sans-serif;
 }
-.container{
-  
-  max-width: 40rem;
 
+.container {
+  max-width: 40rem;
   margin: 7rem auto 0;
 }
-header{
-  text-align: center;
 
+header {
+  text-align: center;
 }
-header nav{
+
+header nav {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
 }
+
 header nav > a {
   text-decoration: none;
   border: 1px solid;
@@ -29,36 +31,79 @@ header nav > a {
   border-radius: 5px;
   color: black;
 }
-header nav > .active{
+
+header nav > .active {
   background: black;
   color: white;
 }
-.form{
+
+.form {
   margin: 2rem auto;
   max-width: 20rem;
 }
-.inputField{
+
+.inputField {
   display: flex;
   flex-direction: column;
-  gap:0.5rem;
-  margin-bottom:1rem;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
+
 .inputField input {
   padding: 0.5rem 1rem 0.5rem 0;
   text-indent: 0.5rem;
 }
+
 .form .btnForm {
-background:  black;
-border: 1px solid black;
-color: white;
-width: 100%;
-padding: 0.5rem 1rem;
-font-size: 1rem;
-cursor: pointer;
-margin-top: 1rem;
+  background: black;
+  border: 1px solid black;
+  color: white;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
 }
-.form .btnForm:disabled{
+
+.form .btnForm:disabled {
   background: #ddd;
   border: 1px solid #ddd;
   cursor: default;
+}
+
+/* list book */
+.listbook {
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.listbook .noData {
+  text-align: center;
+  grid-column: 1 / span 3;
+  margin-top: 2rem;
+  color: #333;
+}
+
+/* card */
+.book {
+  background: #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.book h2 {
+  text-decoration: underline;
+}
+
+.book .bookDetail {
+  line-height: 25px;
+  margin-top: 0.5rem;
+}
+
+.book .buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
 }

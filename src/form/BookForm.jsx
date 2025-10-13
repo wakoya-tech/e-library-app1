@@ -1,42 +1,55 @@
 import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
-const  BookForm=({handleSubmit})=> {
-    const [bookState,setBookState]=useState({
-        
-        name:'',
-        author:'',
-        price:'',
-    })
-    const handleChange=(e)=>{
-     id:uuidv4();
-     setBookState(  {...bookState,
-        [e.target.name]: e.target.value
-                     
-    })}
-const onSubmit=(e)=>{
-    e.preventDefault();
-    handleSubmit({date: new Date(),
-        ...bookState
-    });
-}
-    const renderInputField = (label,placeholder,name)=>(
-        <div className="inputField">
-    
-       <label>{label}</label>
-            <input value={bookState[name]} onChange={handleChange} name={name} type="text" placeholder={placeholder} />
-        </div>
-    )
-    const disabledSubmit= !bookState.name || !bookState.author ||
-    !bookState.price;
-  return (
-<form  onSubmit={onSubmit} className="form">
-    
-{renderInputField('book Name ','Enter name of book...','name')}
-{renderInputField('book Author ','Enter Author of book...','author')}
-{renderInputField('book price' ,'Enter price of book...','price')}
-<button type="submit"className="btnForm" disabled={disabledSubmit}>submit</button>
-</form>
-  )
-}
+import { v4 as uuidv4 } from "uuid";
 
-export default BookForm
+const BookForm = ({ handleSubmit }) => {
+  const [bookState, setBookState] = useState({
+    name: "",
+    author: "",
+    price: "",
+  });
+
+  const handleChange = (e) => {
+    setBookState({
+      ...bookState,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault(); // ✅ Prevent page reload
+    handleSubmit({
+      id: uuidv4(),           // ✅ Generate unique ID here
+      date: new Date(),        // optional: timestamp
+      ...bookState,
+    });
+    setBookState({ name: "", author: "", price: "" }); // ✅ Clear form after submit
+  };
+
+  const renderInputField = (label, placeholder, name) => (
+    <div className="inputField">
+      <label>{label}</label>
+      <input
+        value={bookState[name]}
+        onChange={handleChange}
+        name={name}
+        type="text"
+        placeholder={placeholder}
+      />
+    </div>
+  );
+
+  const disabledSubmit = !bookState.name || !bookState.author || !bookState.price;
+
+  return (
+    <form onSubmit={onSubmit} className="form">
+      {renderInputField("Book Name", "Enter name of book...", "name")}
+      {renderInputField("Book Author", "Enter author of book...", "author")}
+      {renderInputField("Book Price", "Enter price of book...", "price")}
+      <button type="submit" className="btnForm" disabled={disabledSubmit}>
+        Submit
+      </button>
+    </form>
+  );
+};
+
+export default BookForm;
