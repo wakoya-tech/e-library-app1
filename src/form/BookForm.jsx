@@ -11,6 +11,7 @@ const  BookForm=({handleSubmit})=> {
      id:uuidv4();
      setBookState(  {...bookState,
         [e.target.name]: e.target.value
+                     
     })}
 const onSubmit=(e)=>{
     e.preventDefault();
