@@ -107,3 +107,7 @@ header nav > .active {
   display: flex;
   gap: 0.5rem;
 }
+.book .buttons > button{
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
