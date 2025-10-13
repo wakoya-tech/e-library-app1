@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const BookForm = ({ handleSubmit }) => {
+const BookForm = ({ book, handleSubmit }) => {
   const [bookState, setBookState] = useState({
-    name: "",
-    author: "",
-    price: "",
+    name: book ? book.name : "",
+    author: book ? book.author : "",
+    price: book ? book.price : "",
   });
 
   const handleChange = (e) => {
@@ -16,13 +16,13 @@ const BookForm = ({ handleSubmit }) => {
   };
 
   const onSubmit = (e) => {
-    e.preventDefault(); // ✅ Prevent page reload
+    e.preventDefault();
     handleSubmit({
-      id: uuidv4(),           // ✅ Generate unique ID here
-      date: new Date(),        // optional: timestamp
+      id: uuidv4(),
+      date: new Date(),
       ...bookState,
     });
-    setBookState({ name: "", author: "", price: "" }); // ✅ Clear form after submit
+    setBookState({ name: "", author: "", price: "" });
   };
 
   const renderInputField = (label, placeholder, name) => (
@@ -46,7 +46,7 @@ const BookForm = ({ handleSubmit }) => {
       {renderInputField("Book Author", "Enter author of book...", "author")}
       {renderInputField("Book Price", "Enter price of book...", "price")}
       <button type="submit" className="btnForm" disabled={disabledSubmit}>
-        Submit
+        {book ? "Update" : "Submit"}
       </button>
     </form>
   );
