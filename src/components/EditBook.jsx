@@ -1,24 +1,26 @@
-import { useContext } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { BookContext } from "../context/BookContext.jsx";
-import BookForm from "../form/BookForm.jsx";
+import { useContext } from "react"; 
+import { useNavigate, useParams } from "react-router-dom"; 
+import { BookContext } from "../context/BookContext.jsx"; 
+import BookForm from "../form/BookForm.jsx"; 
 
-const EditBook = () => {
-    const {id}=useParams();
-  const navigate = useNavigate();
-  
-  // useContext to get books and setBooks from your context
-  const { books, setBooks } = useContext(BookContext);
+const EditBook = () => { 
+  const { id } = useParams(); 
+  const navigate = useNavigate(); 
+  const { books, setBooks } = useContext(BookContext); 
+  const bookToEdit = books.filter(book => book.id === id);
+   console.log(bookToEdit);
 
-  const handleOnSubmit = (book) => {
-    setBooks([book, ...books]);
-    navigate('/');
-  }
+  const handleOnSubmit = (book) => { 
+    const filteredBook=books.filter(book=>book.id !==id);
+    setBooks([book,...filteredBook]); 
+    navigate('/'); 
+  } 
 
-  return (
-    <div className="addForm">
-      <BookForm handleSubmit={handleOnSubmit} />
-    </div>
-  );
-}
+  return ( 
+    <div className="addForm"> 
+      <BookForm book={bookToEdit[0]} handleSubmit={handleOnSubmit} /> 
+    </div> 
+  ); 
+} 
+
 export default EditBook;
