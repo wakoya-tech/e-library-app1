@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-
 const BookForm = ({ book, handleSubmit }) => {
   const [bookState, setBookState] = useState({
     name: book ? book.name : "",
