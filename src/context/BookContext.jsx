@@ -6,7 +6,6 @@ export const BookContext = createContext();
 const BookProvider = ({ children }) => {
   const [books, setBooks] = useLocalStorage('books',[]);
   const value = { books, setBooks };
-
   return (
     <BookContext.Provider value={value}>
       {children}
