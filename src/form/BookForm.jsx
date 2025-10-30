@@ -6,14 +6,12 @@ const BookForm = ({ book, handleSubmit }) => {
     author: book ? book.author : "",
     price: book ? book.price : "",
   });
-
   const handleChange = (e) => {
     setBookState({
       ...bookState,
       [e.target.name]: e.target.value,
     });
   };
-
   const onSubmit = (e) => {
     e.preventDefault();
     handleSubmit({
