@@ -21,7 +21,6 @@ const BookForm = ({ book, handleSubmit }) => {
     });
     setBookState({ name: "", author: "", price: "" });
   };
-
   const renderInputField = (label, placeholder, name) => (
     <div className="inputField">
       <label>{label}</label>
