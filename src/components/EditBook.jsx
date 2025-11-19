@@ -13,7 +13,6 @@ const EditBook = () => {
     setBooks([book,...filteredBook]); 
     navigate('/'); 
   } 
-
   return ( 
     <div className="addForm"> 
       <BookForm book={bookToEdit[0]} handleSubmit={handleOnSubmit} /> 
