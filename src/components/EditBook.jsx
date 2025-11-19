@@ -8,7 +8,6 @@ const EditBook = () => {
   const { books, setBooks } = useContext(BookContext); 
   const bookToEdit = books.filter(book => book.id === id);
    console.log(bookToEdit);
-
   const handleOnSubmit = (book) => { 
     const filteredBook=books.filter(book=>book.id !==id);
     setBooks([book,...filteredBook]); 
