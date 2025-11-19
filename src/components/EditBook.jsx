@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom"; 
 import { BookContext } from "../context/BookContext.jsx"; 
 import BookForm from "../form/BookForm.jsx"; 
-
 const EditBook = () => { 
   const { id } = useParams(); 
   const navigate = useNavigate(); 
