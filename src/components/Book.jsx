@@ -17,5 +17,4 @@ const Book = ({ book,handleRemoveBook }) => {
     </div>
   );
 };
-
 export default Book;
