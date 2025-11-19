@@ -10,7 +10,6 @@ const Book = ({ book,handleRemoveBook }) => {
         <p>Price: {price}</p>
         <p>Date: {new Date(date).toDateString()}</p>
       </div>
-
       <div className="buttons">
         <button onClick={() => navigate(`/edit/${id}`)}>Edit</button>
         <button onClick={()=>handleRemoveBook(book.id)}>Delete</button>
