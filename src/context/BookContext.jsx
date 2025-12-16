@@ -7,7 +7,6 @@ const BookProvider = ({ children }) => {
   return (
     <BookContext.Provider value={value}>
       {children}
-      
     </BookContext.Provider>
   );
 }
