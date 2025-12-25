@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { BookContext } from "../context/BookContext.jsx";
 import BookForm from "../form/BookForm.jsx";
-
 const AddBook = () => {
   const navigate = useNavigate();
   // useContext to get books and setBooks from your context
