@@ -7,7 +7,6 @@ const AddBook = () => {
   const navigate = useNavigate();
   // useContext to get books and setBooks from your context
   const { books, setBooks } = useContext(BookContext);
-
   const handleOnSubmit = (book) => {
     setBooks([book, ...books]);
     navigate('/');
