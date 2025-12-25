@@ -5,7 +5,6 @@ import BookForm from "../form/BookForm.jsx";
 
 const AddBook = () => {
   const navigate = useNavigate();
-  
   // useContext to get books and setBooks from your context
   const { books, setBooks } = useContext(BookContext);
 
