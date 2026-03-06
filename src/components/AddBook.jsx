@@ -10,6 +10,7 @@ const AddBook = () => {
     setBooks([book, ...books]);
     navigate('/');
   }
+  
   return (
     <div className="addForm">
       <BookForm handleSubmit={handleOnSubmit} />
