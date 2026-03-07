@@ -5,7 +5,6 @@ const useLocalStorage=(key,initialValue) =>{
         try{
 const localValue=window.localStorage.getItem(key)
        return localValue ? JSON.parse(localValue): initialValue;
-
 }catch(err){
 return initialValue
         }
