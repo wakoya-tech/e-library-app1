@@ -4,6 +4,7 @@ const Book = ({ book,handleRemoveBook }) => {
   const { id, name, author, price, date } = book;
   return (
     
+
     
     <div className="book">
       <h2>{name}</h2>
