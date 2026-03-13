@@ -5,7 +5,6 @@ const Book = ({ book,handleRemoveBook }) => {
   return (
     
 
-    
     <div className="book">
       <h2>{name}</h2>
       <div className="bookDetail">
