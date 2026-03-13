@@ -3,7 +3,6 @@ const Book = ({ book,handleRemoveBook }) => {
   const navigate = useNavigate();
   const { id, name, author, price, date } = book;
   return (
-
     <div className="book">
       <h2>{name}</h2>
       <div className="bookDetail">
