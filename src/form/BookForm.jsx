@@ -12,6 +12,7 @@ const BookForm = ({ book, handleSubmit }) => {
       [e.target.name]: e.target.value,
     });
   };
+  
   const onSubmit = (e) => {
     e.preventDefault();
     handleSubmit({
